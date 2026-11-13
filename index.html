@@ -188,9 +188,8 @@
       <p class="lead">השאירי פרטים ונחזור אלייך לשיחת היכרות, או שלחי הודעה ישירות בוואטסאפ.</p>
       <a class="btn btn-line wa-alt wa-link" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa-i"/></svg>שלחי הודעה בוואטסאפ</a>
     </div>
-    <form name="leads" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="leadForm">
-      <input type="hidden" name="form-name" value="leads">
-      <p hidden><label>אל תמלאי: <input name="bot-field"></label></p>
+    <form name="leads" id="leadForm">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none">
       <label>שם מלא<input name="name" required autocomplete="name"></label>
       <label>טלפון<input name="phone" type="tel" required autocomplete="tel" inputmode="tel" pattern="[0-9\-\+ ]{9,15}"></label>
       <label>מה המטרה שלך?

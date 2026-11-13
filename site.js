@@ -2,8 +2,8 @@
 const SITE = {
   whatsapp: '972507199885',
   whatsappText: 'היי מאיה, הגעתי מהאתר ואשמח לשמוע פרטים על הליווי',
-  instagram: '#',   // TODO: הקישור לאינסטגרם של מאיה
-  formEndpoint: ''  // TODO: כתובת שירות הטפסים (Web3Forms/Formspree). כל עוד ריק, הטופס שולח את הפרטים בוואטסאפ
+  instagram: 'https://www.instagram.com/mayagranat/',
+  formEndpoint: 'https://formsubmit.co/ajax/gmaya80@gmail.com'  // לידים נשלחים למייל דרך FormSubmit
 };
 // ===================================
 const waUrl = (text) => 'https://wa.me/' + SITE.whatsapp + '?text=' + encodeURIComponent(text || SITE.whatsappText);
@@ -27,23 +27,31 @@ onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// טופס לידים
+// טופס לידים: נשלח למייל, ואם השליחה נכשלת – עובר לוואטסאפ כדי שאף ליד לא ילך לאיבוד
 const form = document.getElementById('leadForm');
 if (form) form.addEventListener('submit', e => {
   e.preventDefault();
-  const d = new FormData(form);
+  const d = Object.fromEntries(new FormData(form));
+  if (d._honey) return;
+  const btn = form.querySelector('button[type=submit]');
+  btn.disabled = true; btn.textContent = 'שולחת...';
   const done = () => {
     [...form.children].forEach(c => { if (c.id !== 'thanks') c.style.display = 'none'; });
     document.getElementById('thanks').style.display = 'block';
   };
-  if (!SITE.formEndpoint) {
-    // עד שיחובר שירות טפסים: הפרטים נשלחים כהודעת וואטסאפ, כדי שאף ליד לא ילך לאיבוד
-    const msg = 'היי מאיה, השארתי פרטים באתר:\nשם: ' + d.get('name') + '\nטלפון: ' + d.get('phone') + '\nמטרה: ' + d.get('goal');
-    window.location.href = waUrl(msg);
-    done(); return;
-  }
-  fetch(SITE.formEndpoint, {method:'POST', headers:{'Accept':'application/json'}, body:d})
-    .catch(() => {}).finally(done);
+  const viaWhatsapp = () => {
+    window.location.href = waUrl('היי מאיה, השארתי פרטים באתר:\nשם: ' + d.name + '\nטלפון: ' + d.phone + '\nמטרה: ' + d.goal);
+    done();
+  };
+  if (!SITE.formEndpoint) return viaWhatsapp();
+  fetch(SITE.formEndpoint, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify({
+      'שם': d.name, 'טלפון': d.phone, 'מטרה': d.goal, 'עמוד': location.pathname,
+      _subject: 'ליד חדש מהאתר: ' + d.name, _template: 'table', _captcha: 'false'
+    })
+  }).then(r => r.ok ? done() : viaWhatsapp()).catch(viaWhatsapp);
 });
 
 // סינון (מתכונים)
