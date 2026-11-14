@@ -3,25 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>מחשבון צריכה קלורית | מאיה גרנט</title>
-<meta name="description" content="מחשבון צריכה קלורית יומית: כמה קלוריות וחלבון את צריכה לפי המטרה שלך.">
+<title>מחשבון קלוריות ומסלול | מאיה גרנט</title>
+<meta name="description" content="כמה קלוריות הגוף שלך שורף, כמה לאכול לפי המטרה שלך, ואיזה מסלול ליווי הכי מתאים לך.">
 <meta name="robots" content="noindex, nofollow">
-<meta property="og:title" content="מחשבון צריכה קלורית | מאיה גרנט">
-<meta property="og:description" content="מחשבון צריכה קלורית יומית: כמה קלוריות וחלבון את צריכה לפי המטרה שלך.">
+<meta property="og:title" content="מחשבון קלוריות ומסלול | מאיה גרנט">
+<meta property="og:description" content="כמה קלוריות הגוף שלך שורף, כמה לאכול לפי המטרה שלך, ואיזה מסלול ליווי הכי מתאים לך.">
 <meta property="og:image" content="https://mayagranat.com/hero-1400.jpg">
 <meta property="og:locale" content="he_IL">
 <link rel="icon" type="image/png" href="logo-mark-red.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=1ce8dda1">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=9cd4f567">
 </head>
 <body class="page-calculator">
 <a class="skip" href="#main">דלגי לתוכן</a>
 
 <header id="hdr">
   <div class="wrap">
-    <a href="index.html" aria-label="מאיה גרנט – דף הבית"><img class="mark" src="logo-mark-cream.png" alt="Maya Granat"></a>
+    <a href="index.html" aria-label="מאיה גרנט – דף הבית"><img class="mark" src="logo-mark-red.png" alt="Maya Granat"></a>
     <nav id="nav" aria-label="תפריט ראשי">
       <ul>
         <li><a data-p="index" href="index.html">בית</a></li>
@@ -31,10 +31,9 @@
         <li><a data-p="about" href="about.html">מי אני</a></li>
         <li><a data-p="recipes" href="recipes.html">מתכונים</a></li>
         <li><a data-p="calculator" href="calculator.html">מחשבון קלוריות</a></li>
-        <li><a data-p="team" href="team.html">צוות היועצות</a></li>
       </ul>
     </nav>
-    <a class="btn btn-red hdr-cta" href="index.html#contact">לשיחת היכרות</a>
+    <a class="btn btn-red hdr-cta" href="tel:+972507199885"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>שיחת ייעוץ</a>
     <button class="burger" aria-label="פתיחת תפריט" aria-controls="nav"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -42,47 +41,73 @@
 <main id="main">
 <section class="page-hero">
   <div class="wrap">
-    <span class="eyebrow">CALORIE CALCULATOR</span>
-    <h1>מחשבון <b>צריכה קלורית</b></h1>
-    <p class="lead">כמה קלוריות הגוף שלך צריך ביום, ומה היעד שמתאים למטרה שלך? מלאי את הפרטים וקבלי הערכה תוך שניות.</p>
+    <h1>כמה קלוריות את צריכה<br><b>כדי להגיע לגוף שאת רוצה?</b></h1>
+    <p class="lead">עני על כמה שאלות קצרות וגלי מה צריכת הקלוריות המשוערת שלך, ואיזה מסלול ליווי יכול להתאים למטרות שלך ולנקודת הפתיחה שלך.</p>
   </div>
 </section>
-<section>
-  <div class="wrap calc">
-    <form id="calcForm" novalidate>
-      <div><label>מין</label>
-        <div class="seg" role="radiogroup">
-          <label><input type="radio" name="sex" value="f" checked><span>אישה</span></label>
-          <label><input type="radio" name="sex" value="m"><span>גבר</span></label>
+<section class="wp">
+  <div class="wrap wp-grid">
+    <form id="wp" class="wp-form" novalidate>
+      <fieldset><legend>מה המטרה שלך?</legend>
+        <div class="seg2 opt g2" data-name="mode">
+          <button type="button" data-v="loss" class="on"><b>ירידה במשקל</b><small>אני רוצה לרדת במשקל, להפחית שומן גוף ולהרגיש טוב יותר עם הגוף שלי.</small></button>
+          <button type="button" data-v="cut"><b>חיטוב</b><small>המשקל הוא לא בהכרח הבעיה. אני רוצה להפחית באחוזי השומן, להדגיש את השרירים וליצור מראה חטוב יותר.</small></button>
+          <button type="button" data-v="gain"><b>עלייה במסת שריר</b><small>אני רוצה לבנות מסת שריר, להתחזק ולפתח גוף שרירי ומעוצב יותר.</small></button>
+          <button type="button" data-v="recomp"><b>שינוי הרכב גוף</b><small>אני רוצה לבנות מסת שריר ולהפחית שומן במקביל, בלי להתמקד דווקא במספר שעל המשקל.</small></button>
+          <button type="button" data-v="unsure" class="wide"><b>אני לא בטוחה</b><small>עזרי לי להבין מה מתאים לי</small></button>
         </div>
-      </div>
-      <div class="row2">
-        <label>גיל<input name="age" type="number" inputmode="numeric" min="15" max="90" placeholder="30" required></label>
-        <label>גובה (ס״מ)<input name="height" type="number" inputmode="numeric" min="130" max="220" placeholder="165" required></label>
-        <label>משקל (ק״ג)<input name="weight" type="number" inputmode="decimal" min="35" max="250" step="0.1" placeholder="65" required></label>
-      </div>
-      <label>רמת פעילות
-        <select name="activity">
-          <option value="1.2">יושבנית, כמעט בלי פעילות</option>
-          <option value="1.375" selected>פעילות קלה, 1–3 אימונים בשבוע</option>
-          <option value="1.55">פעילות בינונית, 3–5 אימונים בשבוע</option>
-          <option value="1.725">פעילות גבוהה, 6–7 אימונים בשבוע</option>
-          <option value="1.9">פעילות גבוהה מאוד, עבודה פיזית ואימונים</option>
-        </select>
-      </label>
-      <div><label>המטרה שלי</label>
-        <div class="seg" role="radiogroup">
-          <label><input type="radio" name="goal" value="cut" checked><span>ירידה במשקל</span></label>
-          <label><input type="radio" name="goal" value="keep"><span>שמירה</span></label>
-          <label><input type="radio" name="goal" value="gain"><span>בניית שריר</span></label>
+        <div class="unsure">
+          <p class="uq"><span>1</span>מה הכי היית רוצה לשנות בגוף שלך?</p>
+          <p class="uqs">אפשר לבחור יותר מתשובה אחת</p>
+          <div class="seg2 opt g2 quiz multi" data-name="q1"><button type="button" data-v="0"><b>לרדת משמעותית במשקל</b></button><button type="button" data-v="1"><b>להוריד כמה קילוגרמים</b></button><button type="button" data-v="2"><b>לצמצם היקפים, בעיקר בבטן ובמותניים</b></button><button type="button" data-v="3"><b>להיראות מוצקה וחטובה יותר</b></button><button type="button" data-v="4"><b>לבנות מסת שריר ולעצב את הגוף</b></button><button type="button" data-v="5"><b>להתחזק ולהרגיש בכושר טוב יותר</b></button></div>
+          <p class="uq"><span>2</span>איך את מרגישה לגבי המשקל שלך היום?</p>
+          <div class="seg2 opt quiz q3c" data-name="q2"><button type="button" data-v="0"><b>אני רוצה לרדת במשקל</b></button><button type="button" data-v="1"><b>המשקל שלי תקין, אבל הגוף לא מוצק ומוגדר מספיק</b></button><button type="button" data-v="2"><b>אני רוצה לעלות במשקל או במסת שריר</b></button></div>
+          <p class="uq"><span>3</span>מה הכי מתאר אותך כרגע?</p>
+          <div class="seg2 opt g2 quiz" data-name="q3"><button type="button" data-v="0"><b>אני מתאמנת ולא רואה תוצאות</b></button><button type="button" data-v="1"><b>אני אוכלת בריא, אבל לא מצליחה לרדת במשקל</b></button><button type="button" data-v="2"><b>אני מתחילה דיאטות ולא מצליחה להתמיד</b></button><button type="button" data-v="3"><b>אני רוצה להתחיל להתאמן, אבל לא יודעת איך</b></button><button type="button" data-v="4"><b>אני יורדת במשקל, אבל לא מרוצה ממראה הגוף</b></button><button type="button" data-v="5"><b>אני מתאמנת בסטודיו, אבל לא רואה שינוי בגוף</b></button></div>
+          <p class="uans" id="uAns" hidden></p>
         </div>
-      </div>
-      <button class="btn btn-red" type="submit">חשבי לי</button>
+      </fieldset>
+      <fieldset><legend>קצת עלייך</legend>
+        <div class="seg2" data-name="sex"><button type="button" data-v="f" class="on"><b>אישה</b></button><button type="button" data-v="m"><b>גבר</b></button></div>
+        <div class="wp-nums">
+          <label><span>גיל</span><input name="age" type="number" inputmode="numeric" placeholder="30"></label>
+          <label><span>גובה <small>ס״מ</small></span><input name="height" type="number" inputmode="numeric" placeholder="165"></label>
+          <label><span>משקל <small>ק״ג</small></span><input name="weight" type="number" inputmode="decimal" step="0.1" placeholder="68"></label>
+          <label class="goal l-only"><span>משקל יעד <small>ק״ג</small></span><input name="target" type="number" inputmode="decimal" step="0.1" placeholder="62"></label>
+        </div>
+      </fieldset>
+      <fieldset><legend>כמה את פעילה ביום-יום?</legend>
+        <p class="wp-hint">התייחסי לתנועה שלך במהלך היום, ללא האימונים שאת עושה בנפרד.</p>
+        <div class="seg2 opt g2" data-name="job">
+          <button type="button" data-v="0" class="on"><b>יושבנית</b><small>רוב היום בישיבה, בעבודה, בלימודים או בבית, עם מעט תנועה.</small></button>
+          <button type="button" data-v="100"><b>פעילות קלה</b><small>משלבת ישיבה עם קצת הליכה ותנועה במהלך היום.</small></button>
+          <button type="button" data-v="220"><b>פעילות בינונית</b><small>נמצאת הרבה על הרגליים, הולכת וזזה לא מעט במהלך היום.</small></button>
+          <button type="button" data-v="350"><b>פעילות גבוהה</b><small>רוב היום בתנועה, בעבודה פיזית או עם הרבה הליכה ועמידה.</small></button>
+        </div>
+        <div class="wp-sub"><span>צעדים ביום</span><div class="seg2 four" data-name="steps"><button type="button" data-v="3000"><b>עד <bdi>4K</bdi></b></button><button type="button" data-v="6000" class="on"><b><bdi>4K-8K</bdi></b></button><button type="button" data-v="9000"><b><bdi>8K-10K</bdi></b></button><button type="button" data-v="12000"><b><bdi>10K</bdi> ומעלה</b></button></div></div>
+      </fieldset>
+      <fieldset><legend>האימונים שלך</legend>
+        <p class="wp-hint">כמה פעמים בשבוע את עושה כל סוג אימון? אם את לא מתאמנת כרגע, אפשר להשאיר הכול על 0.</p>
+        <div class="tr-list">
+          <div class="tr-row" data-met="5"><div class="tr-t"><b>כוח בחדר כושר</b><small>משקולות, מכונות, כבלים</small></div><div class="stepper"><button type="button" data-d="1" aria-label="עוד אימון כוח בחדר כושר">+</button><input type="number" inputmode="numeric" min="0" max="14" value="0" aria-label="כוח בחדר כושר בשבוע"><button type="button" data-d="-1" aria-label="פחות אימוני כוח בחדר כושר">−</button></div></div>
+          <div class="tr-row" data-met="5"><div class="tr-t"><b>כוח בסטודיו</b><small>אימוני כוח בקבוצה קטנה או אישיים</small></div><div class="stepper"><button type="button" data-d="1" aria-label="עוד אימון כוח בסטודיו">+</button><input type="number" inputmode="numeric" min="0" max="14" value="0" aria-label="כוח בסטודיו בשבוע"><button type="button" data-d="-1" aria-label="פחות אימוני כוח בסטודיו">−</button></div></div>
+          <div class="tr-row" data-met="7"><div class="tr-t"><b>פונקציונלי / HIIT</b><small>אימונים עצימים, קרוספיט, מעגלים</small></div><div class="stepper"><button type="button" data-d="1" aria-label="עוד אימון פונקציונלי / HIIT">+</button><input type="number" inputmode="numeric" min="0" max="14" value="0" aria-label="פונקציונלי / HIIT בשבוע"><button type="button" data-d="-1" aria-label="פחות אימוני פונקציונלי / HIIT">−</button></div></div>
+          <div class="tr-row" data-met="6"><div class="tr-t"><b>אירובי</b><small>ריצה, הליכה, ספינינג, זומבה, אינטרוולים</small></div><div class="stepper"><button type="button" data-d="1" aria-label="עוד אימון אירובי">+</button><input type="number" inputmode="numeric" min="0" max="14" value="0" aria-label="אירובי בשבוע"><button type="button" data-d="-1" aria-label="פחות אימוני אירובי">−</button></div></div>
+          <div class="tr-row" data-met="3"><div class="tr-t"><b>פילאטיס / יוגה</b><small>מזרן, מכשירים, יוגה</small></div><div class="stepper"><button type="button" data-d="1" aria-label="עוד אימון פילאטיס / יוגה">+</button><input type="number" inputmode="numeric" min="0" max="14" value="0" aria-label="פילאטיס / יוגה בשבוע"><button type="button" data-d="-1" aria-label="פחות אימוני פילאטיס / יוגה">−</button></div></div>
+        </div>
+      </fieldset>
+      <button class="btn btn-red wp-go" type="submit">חשבי לי</button>
+      <p class="wp-err" id="wpErr" hidden></p>
     </form>
-    <div class="result" id="result" aria-live="polite">
-      <p class="empty">התוצאה שלך תופיע כאן.</p>
+
+    <div class="wp-res" id="wpRes">
+      <div class="wp-empty">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M6 16l4-5 3 3 5-7"/></svg>
+        <p>התוצאה שלך תופיע כאן</p>
+      </div>
     </div>
   </div>
+  <p class="wp-note wrap">החישוב מבוסס על נוסחת Harris-Benedict (המעודכנת) להוצאה במנוחה, בתוספת הערכה לפעילות היומיומית, לאימונים ולאפקט התרמי של המזון. ההמלצה מיועדת למבוגרים בלבד, אינה מתאימה בהריון, בהנקה או במצבים רפואיים, ואינה מחליפה ייעוץ אישי.</p>
 </section>
 <section class="cta-band">
   <div class="wrap">
@@ -101,7 +126,7 @@
     <div class="top">
       <a href="index.html"><img class="flogo" src="logo-full-cream.png" alt="Maya Granat"></a>
       <ul><li><a href="tracks.html">מסלולים</a></li><li><a href="results.html">לפני ואחרי</a></li><li><a href="reviews.html">חוות דעת</a></li><li><a href="about.html">מי אני</a></li></ul>
-      <ul><li><a href="recipes.html">מתכונים</a></li><li><a href="calculator.html">מחשבון קלוריות</a></li><li><a href="team.html">צוות היועצות</a></li><li><a href="index.html#faq">שאלות נפוצות</a></li></ul>
+      <ul><li><a href="recipes.html">מתכונים</a></li><li><a href="calculator.html">מחשבון קלוריות</a></li><li><a href="index.html#faq">שאלות נפוצות</a></li></ul>
       <ul><li><a class="ig-link" href="#" target="_blank" rel="noopener">Instagram</a></li><li><a class="wa-link" href="#" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="index.html#contact">צרי קשר</a></li></ul>
     </div>
     <div class="bottom"><span>© <span id="yr"></span> Maya Granat. כל הזכויות שמורות.</span><span><a href="#">הצהרת נגישות</a></span></div>
@@ -112,38 +137,143 @@
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa-i" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></symbol></svg>
 
-<script src="site.js?v=b24ba052"></script>
+<script src="site.js?v=6d06fa14"></script>
 <script>
 (() => {
-  const f = document.getElementById('calcForm'), out = document.getElementById('result');
+  const f = document.getElementById('wp'), out = document.getElementById('wpRes'), err = document.getElementById('wpErr'), uAns = document.getElementById('uAns');
+  const val = n => { const b = f.querySelector('.seg2[data-name="' + n + '"] .on'); return b ? b.dataset.v : null; };
+  const NAMES = {loss: 'ירידה במשקל', cut: 'חיטוב', recomp: 'שינוי הרכב גוף', gain: 'עלייה במסת שריר'};
+  // שאלון "לא בטוחה": כל תשובה נותנת נקודות למטרות, והמטרה עם הכי הרבה נקודות נבחרת
+  const SC = {q1: [{loss: 3}, {cut: 2, loss: 1}, {cut: 2, recomp: 1}, {recomp: 2, cut: 1}, {gain: 2, recomp: 1}, {recomp: 1, gain: 1}],
+              q2: [{loss: 2, cut: 1}, {recomp: 2, cut: 1}, {gain: 3}],
+              q3: [{recomp: 1, cut: 1}, {loss: 1, cut: 1}, {loss: 1}, {recomp: 1, loss: 1}, {recomp: 2, cut: 1}, {recomp: 2}]};
+  const TIE = [['loss', 'cut', 'recomp', 'gain'], ['recomp', 'cut', 'gain', 'loss'], ['gain', 'recomp', 'cut', 'loss']];
+  const Q3TXT = ['כשמתאמנים ולא רואים תוצאות, בדרך כלל מה שחסר הוא התזונה וההתאמה האישית.',
+                 'אוכל בריא זו התחלה מצוינת. מה שעושה את ההבדל הוא הכמויות וההתאמה לגוף שלך.',
+                 'בלי דיאטות קיצוניות: נבנה תפריט שאפשר לחיות איתו, עם ליווי שעוזר להתמיד.',
+                 'מתחילות בדיוק מאיפה שאת נמצאת, עם תוכנית אימונים ברורה ובקצב שמתאים לך.',
+                 'כשהמשקל יורד אבל הגוף לא משתנה, הפתרון הוא בדרך כלל אימוני כוח ומספיק חלבון.',
+                 'כדי לראות שינוי בגוף, נשלב בהדרגה אימוני כוח עם התקדמות, לצד מה שאת אוהבת.'];
+  const quiz = () => {
+    const q1 = [...f.querySelectorAll('[data-name=q1] .on')].map(b => +b.dataset.v), a = [val('q2'), val('q3')];
+    if (!q1.length || a.includes(null)) return null;
+    const t = {loss: 0, cut: 0, recomp: 0, gain: 0}, add = o => Object.entries(o).forEach(([k, n]) => t[k] += n);
+    q1.forEach(v => add(SC.q1[v])); add(SC.q2[+a[0]]); add(SC.q3[+a[1]]);
+    return TIE[+a[0]].reduce((best, k) => t[k] > t[best] ? k : best);
+  };
+  const goal = () => val('mode') === 'unsure' ? quiz() : val('mode');
+  const rows = [...f.querySelectorAll('.tr-row')];
+  const cnt = r => { const i = r.querySelector('input'); return Math.max(0, Math.min(14, parseInt(i.value) || 0)); };
+  const sync = () => {
+    const m = goal(), uns = val('mode') === 'unsure';
+    f.classList.toggle('is-unsure', uns);
+    f.classList.toggle('not-loss', m !== 'loss');
+    rows.forEach(r => r.classList.toggle('on', cnt(r) > 0));
+    uAns.hidden = !(uns && m);
+    if (uns && m) uAns.innerHTML = 'לפי התשובות שלך, המטרה שמתאימה לך היא <b>' + NAMES[m] + '</b>.<small>' + Q3TXT[+val('q3')] + '</small>';
+  };
+  f.querySelectorAll('.seg2').forEach(g => g.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    if (g.classList.contains('multi')) b.classList.toggle('on'); else g.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+    sync();
+    if (out.dataset.done) f.requestSubmit();
+  }));
+  rows.forEach(r => {
+    const i = r.querySelector('input');
+    r.querySelector('.stepper').addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      i.value = Math.max(0, Math.min(14, cnt(r) + +b.dataset.d)); sync();
+      if (out.dataset.done) f.requestSubmit();
+    });
+    i.addEventListener('input', sync);
+  });
+  sync();
   const fmt = n => Math.round(n).toLocaleString('he-IL');
+  const kg = n => (Math.round(n * 10) / 10).toString();
+  // Harris-Benedict (Roza & Shizgal revision)
+  const bmrF = (w, h, a, sex) => sex === 'm' ? 88.362 + 13.397 * w + 4.799 * h - 5.677 * a : 447.593 + 9.247 * w + 3.098 * h - 4.330 * a;
+  const parts = (w, h, a, o) => {
+    const B = bmrF(w, h, a, o.sex);
+    const N = o.steps * w * 0.00055 + o.job;              // NEAT: steps + daily activity
+    const E = o.eat * w / 7;                               // EAT: ~60 min sessions, sum of (MET-1) per week
+    const T = 0.1 * (B + N + E);                            // TEF
+    return {B, N, E, T, total: B + N + E + T};
+  };
+  // הגבול התחתון האישי: לא פחות מההוצאה במנוחה (BMR), לא יותר מ-25% גירעון מההוצאה היומית, ואף פעם לא מתחת ל-1,200 / 1,500
+  const floorOf = (P, sex) => Math.ceil(Math.max(sex === 'm' ? 1500 : 1200, P.B, P.total * 0.75) / 10) * 10;
+  const sim = (I, w0, h, a, o, D) => { let w = w0; const pts = [w0];
+    for (let d = 1; d <= D; d++) { w += (I - parts(w, h, a, o).total) / 7700; if (d % 7 === 0) pts.push(w); } return {w, pts}; };
+  const solve = (w0, wt, h, a, o, D) => { let lo = 600, hi = 6000;
+    for (let i = 0; i < 50; i++) { const m = (lo + hi) / 2; sim(m, w0, h, a, o, D).w > wt ? hi = m : lo = m; } return (lo + hi) / 2; };
+  const TR = {4: 'להתחיל נכון', 6: 'שינוי שנשאר', 10: 'תהליך עמוק'};
+  let chosen = null;
+  out.addEventListener('click', e => { const b = e.target.closest('[data-m]'); if (!b) return; chosen = +b.dataset.m; f.requestSubmit(); });
   f.addEventListener('submit', e => {
     e.preventDefault();
-    const d = Object.fromEntries(new FormData(f));
-    const age = +d.age, h = +d.height, w = +d.weight, act = +d.activity;
-    if (!(age >= 15 && age <= 90 && h >= 130 && h <= 220 && w >= 35 && w <= 250)) {
-      out.innerHTML = '<p class="empty">נא למלא גיל, גובה ומשקל בטווח הגיוני.</p>'; return;
+    const mode = goal();
+    if (!mode) { err.textContent = 'עני על שלוש השאלות למעלה, כדי שנדע מה המטרה שמתאימה לך.'; err.hidden = false; return; }
+    const g = n => parseFloat(f.elements[n].value);
+    const a = g('age'), h = g('height'), w0 = g('weight'), wt = mode === 'loss' ? g('target') : w0;
+    const ok = a >= 18 && a <= 90 && h >= 130 && h <= 220 && w0 >= 35 && w0 <= 250 && (mode !== 'loss' || (wt >= 35 && wt < w0));
+    if (!ok) { err.textContent = mode === 'loss' && wt >= w0 ? 'משקל היעד צריך להיות נמוך מהמשקל הנוכחי. אם המטרה שלך היא חיטוב או בנייה, בחרי מטרה אחרת למעלה.' : 'נא למלא גיל (18+), גובה ומשקל' + (mode === 'loss' ? ' ומשקל יעד.' : '.'); err.hidden = false; return; }
+    err.hidden = true;
+    const tr = rows.map(r => ({n: cnt(r), met: +r.dataset.met, name: r.querySelector('b').textContent}));
+    const o = {sex: val('sex'), job: +val('job'), steps: +val('steps'), train: tr.reduce((t, x) => t + x.n, 0), eat: tr.reduce((t, x) => t + x.n * (x.met - 1), 0)};
+    const strength = tr[0].n + tr[1].n + tr[2].n;
+    const P = parts(w0, h, a, o), fl = floorOf(P, o.sex);
+    let kcal, prot, rec, label, extra = '', chart = '', warn = '';
+    if (mode === 'loss') {
+      const weeks = (w0 - wt) / (w0 * 0.006);
+      rec = 11;
+      for (const M of [4, 6, 10]) if (weeks <= M * 4.33 && solve(w0, wt, h, a, o, Math.round(M * 30.4)) >= fl) { rec = M; break; }
+      const M = chosen || Math.min(rec, 10), D = Math.round(M * 30.4);
+      let I = solve(w0, wt, h, a, o, D), end = wt;
+      if (I < fl) {
+        I = fl; end = sim(fl, w0, h, a, o, D).w;
+        warn = 'כדי להגיע ל-' + wt + ' ק״ג תוך ' + M + ' חודשים, צריך לאכול פחות ממה שהגוף שלך צריך. אז לא נרד מתחת ל-' + fmt(fl) + ' קלוריות: בקצב הזה תגיעי לכ-' + kg(end) + ' ק״ג תוך ' + M + ' חודשים, ונמשיך משם.';
+        label = 'היעד היומי שלך, בקצב בריא';
+      } else label = 'כדי להגיע ל-' + wt + ' ק״ג תוך ' + M + ' חודשים';
+      kcal = Math.round(I / 10) * 10; prot = Math.round(Math.min(w0, wt + 15) * 1.8);
+      if (rec === 11) extra = '<p class="wp-tip">כדי לרדת ' + kg(w0 - wt) + ' ק״ג בקצב בריא, כדאי לחשוב על ליווי ארוך מ-10 חודשים, או על מטרת ביניים. נדבר על זה בשיחת הייעוץ.</p>';
+      const pts = sim(I, w0, h, a, o, D).pts, W = 320, H = 110, mn = Math.min(...pts, wt) - 1, mx = Math.max(...pts) + 1;
+      const X = i => (W - 10) - i * (W - 20) / (pts.length - 1), Y = v => 8 + (mx - v) * (H - 28) / (mx - mn);
+      chart = '<svg class="wp-chart" viewBox="0 0 ' + W + ' ' + H + '" aria-label="תחזית משקל"><line x1="10" x2="' + (W - 10) + '" y1="' + Y(wt).toFixed(1) + '" y2="' + Y(wt).toFixed(1) + '" class="tg"/><path d="' + pts.map((v, i) => (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(v).toFixed(1)).join(' ') + '"/><circle cx="' + X(0) + '" cy="' + Y(pts[0]).toFixed(1) + '" r="3.5"/><circle cx="' + X(pts.length - 1).toFixed(1) + '" cy="' + Y(pts[pts.length - 1]).toFixed(1) + '" r="4.5" class="end"/><text x="' + (W - 12) + '" y="' + (H - 3) + '" text-anchor="start">היום · ' + w0 + '</text><text x="12" y="' + (H - 3) + '" text-anchor="end">' + M + ' חודשים · ' + kg(end) + '</text></svg>';
+    } else {
+      const C = {cut: [0.85, 2, 6, 'היעד היומי שלך לחיטוב וירידה בשומן', 'בחיטוב, המשקל לא תמיד מספר את כל הסיפור. עם אימוני כוח וחלבון גבוה, הגוף שומר על השריר ומוריד שומן, ולכן חשוב לעקוב גם אחרי היקפים ותמונות.'],
+        recomp: [0.95, 2, 10, 'היעד היומי שלך לשינוי הרכב גוף', 'שינוי הרכב גוף הוא תהליך הדרגתי: המשקל כמעט לא זז, אבל הגוף משתנה. ההתקדמות נמדדת בעיקר בהיקפים, בתמונות ובכוח באימונים.'],
+        gain: [1.08, 1.8, 10, 'היעד היומי שלך לעלייה במסת שריר', 'בניית שריר דורשת סבלנות: עודף קלורי קטן, אימוני כוח עם התקדמות הדרגתית ומספיק חלבון. עלייה של כ-0.25-0.5 ק״ג בחודש היא קצב טוב.']}[mode];
+      kcal = Math.max(Math.round(P.total * C[0] / 10) * 10, fl); prot = Math.round(w0 * C[1]); rec = C[2]; label = C[3];
+      extra = '<p class="wp-tip">' + C[4] + '</p>';
     }
-    // Mifflin-St Jeor
-    const bmr = 10 * w + 6.25 * h - 5 * age + (d.sex === 'm' ? 5 : -161);
-    const tdee = bmr * act;
-    const floor = d.sex === 'm' ? 1500 : 1200;
-    let target = d.goal === 'cut' ? tdee * 0.85 : d.goal === 'gain' ? tdee * 1.08 : tdee;
-    target = Math.max(target, Math.min(floor, tdee));
-    const protein = w * (d.goal === 'keep' ? 1.6 : 1.8);
-    const goalTxt = {cut:'לירידה במשקל', keep:'לשמירה', gain:'לבניית שריר'}[d.goal];
-    const msg = 'היי מאיה, עשיתי את מחשבון הקלוריות באתר. יצא לי יעד של ' + fmt(target) + ' קלוריות ביום ' + goalTxt + '. אשמח לשמוע איך בונים לי תפריט שמתאים לזה';
+    if (!strength) extra += '<p class="wp-tip">' + (o.train ? 'כדי לחטב ולשמור על השריר' : 'כדי לראות שינוי אמיתי בגוף') + ', כדאי לשלב בשבוע גם אימוני כוח. נבנה את זה יחד, בחדר כושר, בסטודיו או בבית.</p>';
+    const recM = rec > 10 ? 10 : rec, recTxt = rec > 10 ? '10 חודשים ומעלה' : rec + ' חודשי ליווי';
+    const msg = 'היי מאיה, עשיתי את המחשבון באתר. אני ' + w0 + ' ק"ג, המטרה שלי: ' + (mode === 'loss' ? 'ירידה ל-' + wt + ' ק"ג' : NAMES[mode]) +
+      '. אימונים בשבוע: ' + (o.train ? tr.filter(x => x.n).map(x => x.name + ' ' + x.n).join(', ') : 'כרגע לא מתאמנת') +
+      '. יצא לי יעד של ' + fmt(kcal) + ' קלוריות ביום, והמחשבון המליץ על מסלול של ' + recTxt + '. אשמח לשמוע עוד';
+    out.dataset.done = 1;
     out.innerHTML =
-      '<p class="lbl">היעד היומי שלך ' + goalTxt + '</p>' +
-      '<div class="big">' + fmt(target) + ' <small>קלוריות ביום</small></div>' +
-      '<div class="grid3">' +
-        '<div><b>' + fmt(bmr) + '</b><span>קלוריות במנוחה</span></div>' +
-        '<div><b>' + fmt(tdee) + '</b><span>הוצאה יומית</span></div>' +
-        '<div><b>' + fmt(protein) + ' גר׳</b><span>חלבון מומלץ</span></div>' +
-      '</div>' +
-      '<p style="font-size:18px;margin-bottom:20px">רוצה תפריט שבנוי בדיוק על המספרים שלך, עם אוכל שאת אוהבת?</p>' +
+      '<p class="wp-k">' + label + '</p>' +
+      '<div class="wp-big">' + fmt(kcal) + '<small>קלוריות ביום</small></div>' +
+      '<p class="wp-est">זו הערכה ונקודת פתיחה, לא מספר מדויק. כל גוף מגיב אחרת, ולכן במהלך התהליך עוקבים אחרי ההתקדמות ומתאימים את המספרים. בדיוק את זה אנחנו עושות בליווי.</p>' +
+      (warn ? '<p class="wp-warn">' + warn + '</p>' : '') +
+      '<div class="wp-3"><div><b>' + fmt(P.total) + '</b><span>הוצאה יומית (TDEE)</span></div><div><b>' + prot + ' גר׳</b><span>חלבון ביום</span></div></div>' +
+      chart + extra +
+      '<div class="wp-rec"><span class="rk">המסלול שמתאים לך</span><b>' + recTxt + '</b><em>' + (TR[recM] || '') + '</em>' +
+        (mode === 'loss' ? '<div class="wp-alt">' + [4, 6, 10].map(m => '<button type="button" data-m="' + m + '"' + ((chosen || Math.min(rec, 10)) === m ? ' class="on"' : '') + '>' + m + ' ח׳</button>').join('') + '</div>' : '') +
+        '<a href="tracks.html">לפרטים על המסלולים</a></div>' +
+      '<details class="wp-how"><summary>איך חישבנו?</summary>' +
+        '<div class="row"><span>הוצאה במנוחה <i>BMR</i></span><b>' + fmt(P.B) + '</b></div>' +
+        '<div class="row"><span>פעילות יומיומית <i>NEAT</i></span><b>' + fmt(P.N) + '</b></div>' +
+        '<div class="row"><span>אימונים <i>EAT</i></span><b>' + fmt(P.E) + '</b></div>' +
+        '<div class="row"><span>עיכול המזון <i>TEF</i></span><b>' + fmt(P.T) + '</b></div>' +
+        '<div class="row tot"><span>סך הכול <i>TDEE</i></span><b>' + fmt(P.total) + '</b></div>' +
+        '<div class="row min"><span>המינימום האישי שלך</span><b>' + fmt(fl) + '</b></div>' +
+        '<p class="minx">המחשבון אף פעם לא ימליץ לך לאכול פחות מההוצאה של הגוף שלך במנוחה, או בגירעון של יותר מ-25% מההוצאה היומית. גם אם רוצים לרדת מהר.</p></details>' +
+      '<p class="wp-q">רוצה תפריט שבנוי בדיוק על המספרים שלך?</p>' +
       '<a class="btn btn-red" target="_blank" rel="noopener" href="' + waUrl(msg) + '"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa-i"/></svg>שלחי לי את התוצאה בוואטסאפ</a>' +
-      '<p class="note">החישוב מבוסס על נוסחת Mifflin-St Jeor ומהווה הערכה כללית בלבד. הוא אינו מחליף ייעוץ אישי, ואינו מתאים בהריון, בהנקה או במצבים רפואיים.</p>';
+      '<p class="wp-photo">רוצה שאסתכל גם על נקודת הפתיחה שלך? אפשר לצרף תמונה להודעה בוואטסאפ, והיא תגיע רק אליי.</p>';
+    chosen = null;
+    if (window.innerWidth < 900 && !e.submitter?.dataset?.m) out.scrollIntoView({behavior: 'smooth', block: 'start'});
   });
 })();
 </script>
