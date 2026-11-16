@@ -1010,3 +1010,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 .wp-res .wp-wa:hover{background:#fff9ec12}
 @media (max-width:420px){.wp-lead-row{grid-template-columns:1fr}}
 .wp-res form.wp-lead{background:none;color:var(--cream);border-radius:0;padding:18px 0 0}
+/* המלצת אימונים במחשבון */
+.wp-train-rec{border:1px solid #fff9ec22;border-radius:16px;padding:16px 18px;margin:0 0 16px;background:#fff9ec08}
+.wp-train-rec .rk{display:block;font-size:13px;color:#fff9ec99;margin-bottom:8px}
+.wp-train-rec .tr2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.wp-train-rec .tr2 div{text-align:center;background:#fff9ec0a;border-radius:12px;padding:10px 6px}
+.wp-train-rec .tr2 b{display:block;font-size:24px;font-weight:600;color:#ff3b5c;line-height:1.2}
+.wp-train-rec .tr2 span{font-size:12.5px;color:#fff9ecb0}
+.wp-train-rec ul{list-style:none;padding:0;display:grid;gap:6px}
+.wp-train-rec li{font-size:13.5px;line-height:1.6;color:#fff9ecd0;padding-right:16px;position:relative}
+.wp-train-rec li::before{content:'';position:absolute;right:0;top:9px;width:6px;height:6px;border-radius:50%;background:#ff3b5c}

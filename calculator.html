@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=ddd0ba10">
+<link rel="stylesheet" href="site.css?v=894cfe0f">
 </head>
 <body class="page-calculator">
 <a class="skip" href="#main">דלגי לתוכן</a>
@@ -257,8 +257,23 @@
       kcal = Math.max(Math.round(P.total * C[0] / 10) * 10, fl); prot = Math.round(w0 * C[1]); rec = C[2]; label = C[3];
       extra = '<p class="wp-tip">' + C[4] + '</p>';
     }
-    if (!strength) extra += '<p class="wp-tip">' + (o.train ? 'כדי לחטב ולשמור על השריר' : 'כדי לראות שינוי אמיתי בגוף') + ', כדאי לשלב בשבוע גם אימוני כוח. נבנה את זה יחד, בחדר כושר, בסטודיו או בבית.</p>';
     const recM = rec > 10 ? 10 : rec, recTxt = rec > 10 ? '10 חודשים ומעלה' : rec + ' חודשי ליווי';
+    // המלצת אימונים לפי המטרה ונקודת הפתיחה
+    const RT = {loss: [3, 3, '8-10K', 8000], cut: [3, 4, '8-10K', 8000], recomp: [3, 4, '7-10K', 7000], gain: [3, 5, '6-8K', 6000]}[mode];
+    const sRange = RT[0] === RT[1] ? String(RT[0]) : RT[0] + '-' + RT[1];
+    const stWords = RT[2].replace(/(\d+)-(\d+)K/, '$1 עד $2 אלף');
+    const sWords = RT[0] === RT[1] ? String(RT[0]) : RT[0] + ' עד ' + RT[1];
+    const sNote = strength === 0 ? 'אפשר להתחיל ב-2 אימוני כוח בשבוע ולהגיע בהדרגה ל-' + sWords + '.'
+      : strength < RT[0] ? 'כרגע ' + (strength === 1 ? 'אימון כוח אחד' : strength + ' אימוני כוח') + ' בשבוע. נוסיף בהדרגה עד ' + sWords + '.'
+      : strength > RT[1] ? 'את מתאמנת הרבה. כדאי לוודא שיש מספיק זמן התאוששות בין האימונים.'
+      : 'את כבר בטווח הנכון. מעכשיו המיקוד הוא בהתקדמות במשקלים ובטכניקה.';
+    const stNote = o.steps < RT[3] ? 'כדאי להעלות בהדרגה את כמות הצעדים.' : 'כמות הצעדים שלך מצוינת, שמרי עליה.';
+    const cardio = mode === 'gain' ? 'אירובי במינון נמוך, כדי שהאנרגיה תלך לבניית שריר.'
+      : mode === 'recomp' ? 'אירובי לא חובה. אפשר פעם-פעמיים בשבוע כתוספת.'
+      : 'אירובי הוא תוספת, לא חובה: פעם-פעמיים בשבוע, אם את נהנית ממנו.';
+    const trainBox = '<div class="wp-train-rec"><span class="rk">האימונים שמומלצים לך</span>' +
+      '<div class="tr2"><div><b dir="ltr">' + sRange + '</b><span>אימוני כוח בשבוע</span></div><div><b dir="ltr">' + RT[2] + '</b><span>צעדים ביום</span></div></div>' +
+      '<ul><li>' + sNote + '</li><li>' + stNote + '</li><li>' + cardio + '</li></ul></div>';
     const trTxt = o.train ? tr.filter(x => x.n).map(x => x.name + ' ' + x.n).join(', ') : 'כרגע לא מתאמנת';
     const goalTxt = mode === 'loss' ? 'ירידה במשקל, מ-' + w0 + ' ל-' + wt + ' ק"ג' : NAMES[mode];
     // ההודעה שנשלחת לוואטסאפ של המכירות
@@ -267,12 +282,13 @@
       (mode === 'loss' ? '' : 'משקל נוכחי: ' + w0 + ' ק"ג\n') +
       'אימונים בשבוע: ' + trTxt + '\n' +
       'יצא לי: ' + fmt(kcal) + ' קלוריות ו-' + prot + ' גר׳ חלבון ביום\n' +
+      'הומלץ לי: ' + sWords + ' אימוני כוח בשבוע ו-' + stWords + ' צעדים ביום\n' +
       'המסלול שהומלץ לי: ' + recTxt;
     // ליד מהמחשבון: כל התוצאה נשמרת במאנדיי
     const GOAL_LABEL = {loss: 'ירידה במשקל', cut: 'חיטוב ועיצוב', recomp: 'שינוי הרכב גוף', gain: 'בניית שריר'};
     const esc = v => String(v).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
     const leadNotes = 'מחשבון: ' + goalTxt + ' | משקל ' + w0 + ' ק"ג | יעד ' + fmt(kcal) + ' קל׳ ו-' + prot + ' גר׳ חלבון ביום | TDEE ' + fmt(P.total) +
-      ' | אימונים: ' + trTxt + ' | מסלול מומלץ: ' + recTxt + ' | גיל ' + a;
+      ' | אימונים: ' + trTxt + ' | מומלץ: ' + sWords + ' אימוני כוח ו-' + stWords + ' צעדים | מסלול מומלץ: ' + recTxt + ' | גיל ' + a;
     const leadForm = '<form class="lead-form wp-lead" novalidate>' +
       '<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">' +
       '<input type="hidden" name="age" value="' + esc(a) + '"><input type="hidden" name="goal" value="' + esc(GOAL_LABEL[mode]) + '">' +
@@ -292,7 +308,7 @@
       '<p class="wp-est">זו הערכה ונקודת פתיחה, לא מספר מדויק. כל גוף מגיב אחרת, ולכן במהלך התהליך עוקבים אחרי ההתקדמות ומתאימים את המספרים. בדיוק את זה אנחנו עושות בליווי.</p>' +
       (warn ? '<p class="wp-warn">' + warn + '</p>' : '') +
       '<div class="wp-3"><div><b>' + fmt(P.total) + '</b><span>הוצאה יומית (TDEE)</span></div><div><b>' + prot + ' גר׳</b><span>חלבון ביום</span></div></div>' +
-      chart + extra +
+      chart + trainBox + extra +
       '<div class="wp-rec"><span class="rk">המסלול שמתאים לך</span><b>' + recTxt + '</b><em>' + (TR[recM] || '') + '</em>' +
         (mode === 'loss' ? '<div class="wp-alt">' + [4, 6, 10].map(m => '<button type="button" data-m="' + m + '"' + ((chosen || Math.min(rec, 10)) === m ? ' class="on"' : '') + '>' + m + ' ח׳</button>').join('') + '</div>' : '') +
         '<a href="tracks.html">לפרטים על המסלולים</a></div>' +
