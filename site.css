@@ -944,3 +944,69 @@ footer{border-top:1px solid #fff9ec14;background:#101010}
 .wp-est{font-size:13.5px;line-height:1.65;color:#fff9ecb8;margin-top:12px;max-width:440px}
 .marquee .track{animation-duration:49s}
 .marquee .track{animation-duration:40s}
+/* עמודים משפטיים: נגישות ופרטיות */
+.legal-hero{padding:150px 0 70px}
+.legal{padding:60px 0 90px}
+.legal .wrap{max-width:780px}
+.legal .updated{font-size:14px;color:var(--muted);margin-bottom:26px}
+.legal h2{font-size:clamp(24px,3vw,30px);font-weight:500;margin:38px 0 12px;letter-spacing:0}
+.legal p,.legal li{font-size:17px;line-height:1.85;color:#2b2925}
+.legal ul{padding-right:22px;margin:8px 0 14px;display:grid;gap:6px}
+.legal li::marker{color:var(--red)}
+.legal a{color:var(--red);text-decoration:underline;text-underline-offset:3px}
+.legal-contact{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 24px;margin-top:10px;display:grid;gap:4px}
+.legal-links{display:inline-flex;gap:18px}
+footer .legal-links a:hover{color:var(--cream)}
+#leadForm .note a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+/* נגישות: סימון פוקוס בניווט מקלדת, ועצירת הפס הנע בפוקוס */
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid #ff3b5c;outline-offset:3px;border-radius:6px}
+.marquee:focus-within .track,.ba:focus-within .track{animation-play-state:paused}
+/* פסי הקריאה לפעולה בדפים הפנימיים: שחור עם נגיעות אדומות, כמו בדף הבית */
+.cta-band{background:radial-gradient(560px 420px at 100% 0,#b5012455,transparent 70%),radial-gradient(420px 360px at 0 100%,#b5012430,transparent 70%),var(--black);color:var(--cream)}
+.cta-band h2 b{color:#ff3b5c;font-weight:500}
+.cta-band p{color:#fff9ecc0}
+.cta-band .btn-cream{background:var(--red);color:#fff}
+.cta-band .btn-cream:hover{background:var(--red-d)}
+.cta-band .btn-line{border-color:#fff9ec55;color:var(--cream)}
+.cta-band .btn-line:hover{background:#fff9ec14;border-color:var(--cream)}
+/* פס קריאה לפעולה עם טופס קצר בדפים הפנימיים */
+.band2{text-align:right;padding:80px 0}
+.band-grid{display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:center;max-width:1040px}
+.band-text h2{margin-bottom:14px}
+.band-text p{margin:0 0 22px;max-width:460px}
+.band-wa{display:flex;align-items:center;gap:10px;width:max-content;color:var(--cream);font-size:16px;margin-top:10px;border-bottom:1px solid #fff9ec55;padding-bottom:3px}
+.band-wa svg{width:20px;height:20px;fill:#25D366;flex:none}
+.band-wa:hover{border-bottom-color:var(--cream)}
+.band-form{background:#fff9ec0d;border:1px solid #fff9ec1f;border-radius:22px;padding:24px 26px;display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
+.band-form .hp{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.band-form label{display:flex;flex-direction:column;gap:4px;font-size:14px;font-weight:500;color:#fff9ecc8}
+.band-form input,.band-form select{font-family:inherit;font-size:16px;color:var(--cream);background:transparent;border:0;border-bottom:1.5px solid #fff9ec40;padding:6px 2px 8px;border-radius:0;width:100%}
+.band-form select{appearance:none;-webkit-appearance:none;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23ff3b5c' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat left 4px center;padding-left:24px}
+.band-form select option{color:var(--black)}
+.band-form input:focus,.band-form select:focus{outline:0;border-bottom-color:#ff3b5c}
+.band-form input[type=number]{-moz-appearance:textfield}.band-form input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+.band-form .btn{grid-column:1/-1;justify-content:center;margin-top:6px}
+.band-form .note{grid-column:1/-1;font-size:12.5px;color:#fff9ec99;text-align:center;margin:-4px 0 0}
+.band-form .note a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.band-form .thanks{grid-column:1/-1;color:var(--cream)}
+.band-form .thanks h3{font-size:24px;font-weight:300;margin-bottom:6px}
+@media (max-width:900px){.band-grid{grid-template-columns:1fr;gap:30px}.band2{text-align:center}.band-text p{margin-inline:auto}.band-wa{margin-inline:auto}}
+@media (max-width:420px){.band-form{grid-template-columns:1fr;padding:20px}}
+/* ליד מתוך המחשבון */
+.wp-lead{border-top:1px solid #fff9ec22;padding-top:18px;margin-top:4px;display:grid;gap:10px}
+.wp-lead .hp{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.wp-lead .wp-q{margin:0}
+.wp-qs{font-size:14px;color:#fff9ecb0;margin-top:-6px}
+.wp-lead-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.wp-lead label{display:flex;flex-direction:column;gap:4px;font-size:13.5px;color:#fff9ecc0;font-weight:500}
+.wp-lead input{font-family:inherit;font-size:16px;color:var(--cream);background:#fff9ec0d;border:1.5px solid #fff9ec2a;border-radius:12px;padding:10px 12px;width:100%}
+.wp-lead input:focus{outline:0;border-color:#ff3b5c}
+.wp-lead-note{font-size:12px;text-align:center}
+.wp-lead-note a{color:#fff9ec99;text-decoration:underline;text-underline-offset:3px}
+.wp-lead .thanks{color:var(--cream);padding:14px 0 6px}
+.wp-lead .thanks h3{font-size:26px;font-weight:300;color:#ff3b5c}
+.wp-res .wp-wa{width:100%;justify-content:center;margin-top:14px;border:1px solid #fff9ec44;color:var(--cream);background:transparent}
+.wp-res .wp-wa svg{fill:#25D366}
+.wp-res .wp-wa:hover{background:#fff9ec12}
+@media (max-width:420px){.wp-lead-row{grid-template-columns:1fr}}
+.wp-res form.wp-lead{background:none;color:var(--cream);border-radius:0;padding:18px 0 0}
