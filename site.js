@@ -99,7 +99,7 @@ document.addEventListener('submit', e => {
   const utm = getUtm();
   const jobs = [];
   if (SITE.makeWebhook) jobs.push(fetch(SITE.makeWebhook, {
-    method: 'POST', mode: 'no-cors',
+    method: 'POST', mode: 'no-cors', keepalive: true,
     body: new URLSearchParams({
       name: d.name, phone: intlPhone(d.phone), age: d.age || '', goal: d.goal || '', page: pageName, notes,
       source: 'אתר', utm_source: utm.utm_source || '', utm_medium: utm.utm_medium || '',
@@ -107,7 +107,7 @@ document.addEventListener('submit', e => {
     })
   }));
   if (SITE.formEndpoint) jobs.push(fetch(SITE.formEndpoint, {
-    method: 'POST',
+    method: 'POST', keepalive: true,
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
     body: JSON.stringify({
       'שם': d.name, 'טלפון': d.phone, 'גיל': d.age || '', 'מטרה': d.goal || '', 'עמוד': pageName, 'פרטים': notes,
@@ -115,7 +115,13 @@ document.addEventListener('submit', e => {
     })
   }).then(r => { if (!r.ok) throw new Error('mail'); }));
   if (!jobs.length) return viaWhatsapp();
-  Promise.allSettled(jobs).then(rs => rs.some(r => r.status === 'fulfilled') ? done() : viaWhatsapp());
+  // מציגים "תודה" ברגע שאחד הערוצים קיבל את הליד, בלי לחכות למייל (שלפעמים איטי).
+  // אם אחרי 6 שניות אף אחד עוד לא ענה – מציגים "תודה" בכל זאת (הבקשות ממשיכות ברקע).
+  let finished = false;
+  const finish = ok => { if (finished) return; finished = true; ok ? done() : viaWhatsapp(); };
+  jobs.forEach(j => j.then(() => finish(true), () => {}));
+  Promise.allSettled(jobs).then(rs => { if (!rs.some(r => r.status === 'fulfilled')) finish(false); });
+  setTimeout(() => finish(true), 6000);
 });
 
 // סינון (מתכונים)
